@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     80035,       1832]
-NotebookOptionsPosition[     77868,       1788]
-NotebookOutlinePosition[     78358,       1806]
-CellTagsIndexPosition[     78315,       1803]
+NotebookDataLength[    125932,       2843]
+NotebookOptionsPosition[    120349,       2744]
+NotebookOutlinePosition[    120896,       2763]
+CellTagsIndexPosition[    120853,       2760]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1784,12 +1784,969 @@ Cell[BoxData[
  CellChangeTimes->{3.832436898402474*^9},
  CellLabel->
   "Out[385]=",ExpressionUUID->"5733d72f-a33b-45e2-b5a4-8120efe094d2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Make a movie", "Title"]], "Item",
+ CellChangeTimes->{{3.8325101864966803`*^9, 
+  3.832510193614626*^9}},ExpressionUUID->"d04488d4-bbed-42c7-9a98-\
+72eaea5b0a25"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"movie", "[", 
+   RowBox[{
+   "mode_", ",", "axes_", ",", "flip_", ",", "final\[Beta]Degrees_", ",", 
+    "final\[Phi]_", ",", "final\[Theta]_", ",", "fileName_", ",", 
+    RowBox[{"step_", ":", "0.05"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"frame", ",", 
+      RowBox[{"flipVal", "=", "flip"}], ",", 
+      RowBox[{"axesShown", "=", "axes"}], ",", 
+      RowBox[{"final\[Beta]", "=", 
+       RowBox[{"QuantityMagnitude", "[", 
+        RowBox[{"UnitConvert", "[", 
+         RowBox[{
+          RowBox[{"Quantity", "[", 
+           RowBox[{"final\[Beta]Degrees", ",", "\"\<Degrees\>\""}], "]"}], 
+          ",", "\"\<Radians\>\""}], "]"}], "]"}]}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+     "set", " ", "frame", " ", "style", " ", "with", " ", "sequence", " ", 
+      "of", " ", "IF", " ", "statements"}], " ", "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"mode", "==", "\"\<symmetricPassive\>\""}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"frame", "[", 
+          RowBox[{
+          "f_", ",", "a_", ",", "\[Beta]_", ",", "\[Phi]_", ",", 
+           "\[Theta]_"}], "]"}], ":=", 
+         RowBox[{"Graphics3D", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"GeometricTransformation", "[", 
+              RowBox[{"magneticAxes", " ", ",", 
+               RowBox[{"Composition", "@@", 
+                RowBox[{"{", 
+                 RowBox[{"TranslationTransform", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"0", ",", "0", ",", 
+                    RowBox[{"-", "15"}]}], "}"}], "]"}], "}"}]}]}], "]"}], 
+             ",", 
+             RowBox[{"GeometricTransformation", "[", 
+              RowBox[{"pentaRed", " ", ",", "\[IndentingNewLine]", 
+               RowBox[{"Composition", "@@", 
+                RowBox[{"{", 
+                 RowBox[{"(*", " ", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    "We", " ", "end", " ", "with", " ", "a", " ", "passive", 
+                    " ", "rotation", " ", "that", " ", "takes", " ", "us", 
+                    " ", "into", " ", "the", " ", "lab", " ", "frame", " ", 
+                    SubscriptBox["R", "P"], 
+                    RowBox[{"(", 
+                    RowBox[{"\[Phi]", ",", "\[Theta]", ",", "0"}], ")"}]}], 
+                    "=", 
+                    RowBox[{
+                    SubscriptBox["R", "A"], 
+                    RowBox[{"(", 
+                    RowBox[{"0", ",", 
+                    RowBox[{"-", "\[Theta]"}], ",", 
+                    RowBox[{"-", "\[Phi]"}]}], ")"}]}]}], ";", " ", 
+                   RowBox[{
+                    RowBox[{
+                    "we", " ", "use", " ", "the", " ", "following", " ", 
+                    "identity", " ", "to", " ", "simplify", " ", "the", " ", 
+                    "expressions", " ", "used", " ", "here", " ", 
+                    SubscriptBox["D", 
+                    RowBox[{"z", "''"}]], 
+                    RowBox[{"(", "\[Gamma]", ")"}], 
+                    SubscriptBox["D", 
+                    RowBox[{"y", "'"}]], 
+                    RowBox[{"(", "\[Beta]", ")"}], 
+                    SubscriptBox["D", "z"], 
+                    RowBox[{"(", "\[Alpha]", ")"}]}], "=", 
+                    RowBox[{
+                    SubscriptBox["D", "z"], 
+                    RowBox[{"(", "\[Alpha]", ")"}], 
+                    SubscriptBox["D", "y"], 
+                    RowBox[{"(", "\[Beta]", ")"}], 
+                    SubscriptBox["D", "z"], 
+                    RowBox[{"(", "\[Gamma]", ")"}]}]}]}], " ", "*)"}], 
+                 "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"RotationTransform", "[", 
+                   RowBox[{
+                    RowBox[{"-", "\[Theta]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "]"}], ",", 
+                  RowBox[{"RotationTransform", "[", 
+                   RowBox[{
+                    RowBox[{"-", "\[Phi]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"(*", " ", 
+                   RowBox[{
+                    RowBox[{
+                    "Our", " ", "first", " ", "rotation", " ", "is", " ", 
+                    "to", " ", "symmetrically", " ", "rotate", " ", "A", " ", 
+                    "and", " ", "B", " ", "into", " ", "a", " ", 
+                    RowBox[{"shared", " ", "'"}], 
+                    RowBox[{"dimer", "'"}], " ", 
+                    RowBox[{"frame", ".", " ", "This"}], " ", "is", " ", 
+                    "achieved", " ", "by", " ", "the", " ", "active", " ", 
+                    "rotation", " ", 
+                    SubscriptBox["R", "A"], 
+                    RowBox[{"(", 
+                    RowBox[{"0", ",", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"Pi", "-", "\[Beta]"}], ")"}], "/", "2"}], ",", 
+                    "0"}], ")"}], " ", "for", " ", "molecule", " ", 
+                    RowBox[{"A", ".", " ", "Note"}], " ", "that", " ", "if", 
+                    " ", "we", " ", "want", " ", "the", " ", "x"}], "-", 
+                    RowBox[{
+                    "axis", " ", "to", " ", "point", " ", "towards", " ", 
+                    "the", " ", "joined", " ", "edge", " ", "we", " ", "have",
+                     " ", "to", " ", "change", " ", "the", " ", "first", " ", 
+                    "arguement", " ", "to", " ", "Pi", " ", "and", " ", 
+                    "change", " ", "the", " ", "sign", " ", "of", " ", "the", 
+                    " ", "2", "nd", " ", "arguement", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    "since", " ", "we", " ", "actually", " ", "want", " ", 
+                    "to", " ", "now", " ", "rotate", " ", "around", " ", 
+                    "the"}], " ", "-", 
+                    RowBox[{"y", " ", "axis"}]}], ")"}], " ", "this", " ", 
+                    "is", " ", "done", " ", "by", " ", "the", " ", "if", " ", 
+                    "statements"}]}], "*)"}], 
+                  RowBox[{"RotationTransform", "[", 
+                   RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{"f", ",", "Pi", ",", "0"}], "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
+                  RowBox[{"RotationTransform", "[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{"f", ",", 
+                    RowBox[{"-", "1"}], ",", "1"}], "]"}], "*", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"Pi", "-", "\[Beta]"}], ")"}], "/", "2"}]}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "]"}], ",", 
+                  RowBox[{"TranslationTransform", "[", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{"f", ",", 
+                    RowBox[{"-", "15"}], ",", "15"}], "]"}], ",", "0", ",", 
+                    "0"}], "}"}], "]"}]}], "}"}]}]}], "]"}], ",", 
+             RowBox[{"GeometricTransformation", "[", 
+              RowBox[{"pentaBlue", " ", 
+               RowBox[{"(*", "B", "*)"}], ",", 
+               RowBox[{"Composition", "@@", 
+                RowBox[{"{", 
+                 RowBox[{"(*", " ", 
+                  RowBox[{
+                  "Same", " ", "rotations", " ", "for", " ", "the", " ", 
+                   "magnetic", " ", "here", " ", "as", " ", "for", " ", 
+                   "molecule", " ", "A"}], " ", "*)"}], "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"RotationTransform", "[", 
+                   RowBox[{
+                    RowBox[{"-", "\[Theta]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "]"}], ",", 
+                  RowBox[{"RotationTransform", "[", 
+                   RowBox[{
+                    RowBox[{"-", "\[Phi]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"(*", 
+                   RowBox[{
+                   "Since", " ", "all", " ", "of", " ", "the", " ", "changes",
+                     " ", 
+                    RowBox[{"from", " ", "'"}], 
+                    RowBox[{"flip", "'"}], " ", "are", " ", "captured", " ", 
+                    "in", " ", "rotations", " ", "of", " ", "molecule", " ", 
+                    "A", " ", "we", " ", "simply", " ", "do", " ", "an", " ", 
+                    "active", " ", "rotation", " ", 
+                    SubscriptBox["R", "A"], 
+                    RowBox[{"(", 
+                    RowBox[{"0", ",", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"(", 
+                    RowBox[{"Pi", "-", "\[Beta]"}], ")"}]}], "/", "2"}], ",", 
+                    "0"}], ")"}], " ", "for", " ", "molecule", " ", "B"}], 
+                   "*)"}], "\[IndentingNewLine]", 
+                  RowBox[{"RotationTransform", "[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"(", 
+                    RowBox[{"Pi", "-", "\[Beta]"}], ")"}]}], "/", "2"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "]"}], ",", 
+                  RowBox[{"TranslationTransform", "[", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "15"}], ",", "0", ",", "0"}], "}"}], "]"}]}],
+                  "}"}]}]}], "]"}]}], "}"}], ",", 
+           RowBox[{"Axes", "\[Rule]", "a"}], ",", 
+           RowBox[{"AxesLabel", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ",", 
+           RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", 
+           RowBox[{"PlotRange", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "40"}], ",", "40"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "40"}], ",", "40"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "40"}], ",", "40"}], "}"}]}], "}"}]}], ",", 
+           RowBox[{"Boxed", "\[Rule]", "a"}], ",", 
+           RowBox[{"ViewPoint", "->", 
+            RowBox[{"{", 
+             RowBox[{"5", ",", " ", "10", ",", "6"}], "}"}]}]}], "]"}]}], 
+        ";"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"mode", "\[Equal]", "\"\<symmetricActive\>\""}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"frame", "[", 
+            RowBox[{
+            "f_", ",", "a_", ",", "\[Beta]_", ",", "\[Phi]_", ",", 
+             "\[Theta]_"}], "]"}], ":=", 
+           RowBox[{"Graphics3D", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"GeometricTransformation", "[", 
+                RowBox[{"magneticAxes", " ", 
+                 RowBox[{"(*", 
+                  RowBox[{"also", " ", "works", " ", "as", " ", 
+                   RowBox[{"a", " ", "'"}], 
+                   RowBox[{"lab", "'"}], " ", "axes", " ", "reference"}], 
+                  "*)"}], ",", 
+                 RowBox[{"Composition", "@@", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"RotationTransform", "[", 
+                    RowBox[{"\[Phi]", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"RotationTransform", "[", 
+                    RowBox[{"\[Theta]", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"TranslationTransform", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0", ",", 
+                    RowBox[{"-", "15"}]}], "}"}], "]"}]}], "}"}]}]}], "]"}], 
+               ",", 
+               RowBox[{"GeometricTransformation", "[", 
+                RowBox[{"pentaRed", ",", "\[IndentingNewLine]", 
+                 RowBox[{"Composition", "@@", 
+                  RowBox[{"{", 
+                   RowBox[{"(*", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "Since", " ", "we", " ", "are", " ", "actively", " ", 
+                    "rotating", " ", "the", " ", "B", " ", "field", " ", "in",
+                     " ", "this", " ", "picture", " ", "we", " ", "only", " ",
+                     "need", " ", "to", " ", "rotate", " ", "A", " ", "and", 
+                    " ", "B", " ", "into", " ", "a", " ", "shared", " ", 
+                    "dimer", " ", 
+                    RowBox[{"frame", ".", " ", "This"}], " ", "is", " ", 
+                    "achieved", " ", "by", " ", "the", " ", "active", " ", 
+                    "rotation", " ", 
+                    SubscriptBox["R", "A"], 
+                    RowBox[{"(", 
+                    RowBox[{"0", ",", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"Pi", "-", "\[Beta]"}], ")"}], "/", "2"}], ",", 
+                    "0"}], ")"}], " ", "for", " ", "molecule", " ", 
+                    RowBox[{"A", ".", " ", "Note"}], " ", "that", " ", "if", 
+                    " ", "we", " ", "want", " ", "the", " ", "x"}], "-", 
+                    RowBox[{
+                    "axis", " ", "to", " ", "point", " ", "towards", " ", 
+                    "the", " ", "joined", " ", "edge", " ", "we", " ", "have",
+                     " ", "to", " ", "change", " ", "the", " ", "first", " ", 
+                    "arguement", " ", "to", " ", "Pi", " ", "and", " ", 
+                    "change", " ", "the", " ", "sign", " ", "of", " ", "the", 
+                    " ", "2", "nd", " ", "arguement", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    "since", " ", "we", " ", "actually", " ", "want", " ", 
+                    "to", " ", "now", " ", "rotate", " ", "around", " ", 
+                    "the"}], " ", "-", 
+                    RowBox[{"y", " ", "axis"}]}], ")"}], " ", "this", " ", 
+                    "is", " ", "done", " ", "by", " ", "the", " ", "if", " ", 
+                    "statements"}]}], "*)"}], 
+                   RowBox[{
+                    RowBox[{"RotationTransform", "[", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{"flip", ",", "Pi", ",", "0"}], "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"RotationTransform", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{"f", ",", 
+                    RowBox[{"-", "1"}], ",", "1"}], "]"}], "*", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"Pi", "-", "\[Beta]"}], ")"}], "/", "2"}]}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"TranslationTransform", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{"f", ",", 
+                    RowBox[{"-", "15"}], ",", "15"}], "]"}], ",", "0", ",", 
+                    "0"}], "}"}], "]"}]}], "}"}]}]}], "]"}], ",", 
+               RowBox[{"GeometricTransformation", "[", 
+                RowBox[{"pentaBlue", ",", 
+                 RowBox[{"Composition", "@@", 
+                  RowBox[{"{", "\[IndentingNewLine]", 
+                   RowBox[{"(*", 
+                    RowBox[{
+                    "Since", " ", "all", " ", "of", " ", "the", " ", 
+                    "changes", " ", 
+                    RowBox[{"from", " ", "'"}], 
+                    RowBox[{"flip", "'"}], " ", "are", " ", "captured", " ", 
+                    "in", " ", "rotations", " ", "of", " ", "molecule", " ", 
+                    "A", " ", "we", " ", "simply", " ", "do", " ", "an", " ", 
+                    "active", " ", "rotation", " ", 
+                    SubscriptBox["R", "A"], 
+                    RowBox[{"(", 
+                    RowBox[{"0", ",", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"(", 
+                    RowBox[{"Pi", "-", "\[Beta]"}], ")"}]}], "/", "2"}], ",", 
+                    "0"}], ")"}], " ", "for", " ", "molecule", " ", "B"}], 
+                    "*)"}], "\[IndentingNewLine]", 
+                   RowBox[{
+                    RowBox[{"RotationTransform", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"(", 
+                    RowBox[{"Pi", "-", "\[Beta]"}], ")"}]}], "/", "2"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"TranslationTransform", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "15"}], ",", "0", ",", "0"}], "}"}], "]"}]}],
+                    "}"}]}]}], "]"}]}], "}"}], ",", 
+             RowBox[{"Axes", "\[Rule]", "a"}], ",", 
+             RowBox[{"AxesLabel", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ",", 
+             RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", 
+             RowBox[{"PlotRange", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", "40"}], ",", "40"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", "40"}], ",", "40"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", "40"}], ",", "40"}], "}"}]}], "}"}]}], ",", 
+             RowBox[{"Boxed", "\[Rule]", "a"}], ",", 
+             RowBox[{"ViewPoint", "->", 
+              RowBox[{"{", 
+               RowBox[{"5", ",", " ", "10", ",", "6"}], "}"}]}]}], "]"}]}], 
+          ";"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"mode", "\[Equal]", "\"\<singularPassive\>\""}], ",", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"frame", "[", 
+              RowBox[{
+              "f_", ",", "a_", ",", "\[Beta]_", ",", "\[Phi]_", ",", 
+               "\[Theta]_"}], "]"}], ":=", 
+             RowBox[{"Graphics3D", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"GeometricTransformation", "[", 
+                  RowBox[{"magneticAxes", ",", 
+                   RowBox[{"Composition", "@@", 
+                    RowBox[{"{", 
+                    RowBox[{"TranslationTransform", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0", ",", 
+                    RowBox[{"-", "15"}]}], "}"}], "]"}], "}"}]}]}], "]"}], 
+                 ",", 
+                 RowBox[{"GeometricTransformation", "[", 
+                  RowBox[{"pentaRed", " ", ",", "\[IndentingNewLine]", 
+                   RowBox[{"Composition", "@@", 
+                    RowBox[{"{", 
+                    RowBox[{"(*", 
+                    RowBox[{
+                    RowBox[{
+                    "We", " ", "end", " ", "with", " ", "an", " ", "active", 
+                    " ", "rotation", " ", "that", " ", "takes", " ", "us", 
+                    " ", "into", " ", "the", " ", "lab", " ", "frame", " ", 
+                    SubscriptBox["R", "A"], 
+                    RowBox[{"(", 
+                    RowBox[{"\[Phi]", ",", "\[Theta]", ",", "0"}], ")"}]}], 
+                    ";", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "we", " ", "use", " ", "the", " ", "following", " ", 
+                    "identity", " ", "to", " ", "simplify", " ", "the", " ", 
+                    "expressions", " ", "used", " ", "here", " ", 
+                    SubscriptBox["D", 
+                    RowBox[{"z", "''"}]], 
+                    RowBox[{"(", "\[Gamma]", ")"}], 
+                    SubscriptBox["D", 
+                    RowBox[{"y", "'"}]], 
+                    RowBox[{"(", "\[Beta]", ")"}], 
+                    SubscriptBox["D", "z"], 
+                    RowBox[{"(", "\[Alpha]", ")"}]}], "=", 
+                    RowBox[{
+                    SubscriptBox["D", "z"], 
+                    RowBox[{"(", "\[Alpha]", ")"}], 
+                    SubscriptBox["D", "y"], 
+                    RowBox[{"(", "\[Beta]", ")"}], 
+                    SubscriptBox["D", "z"], 
+                    RowBox[{"(", "\[Gamma]", ")"}]}]}]}], " ", "*)"}], 
+                    "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"RotationTransform", "[", 
+                    RowBox[{
+                    RowBox[{"-", "\[Theta]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"RotationTransform", "[", 
+                    RowBox[{
+                    RowBox[{"-", "\[Phi]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"(*", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "We", " ", "only", " ", "want", " ", "to", " ", "rotate", 
+                    " ", "molecule", " ", 
+                    RowBox[{"A", ".", " ", "This"}], " ", "is", " ", 
+                    "achieved", " ", "by", " ", "the", " ", "active", " ", 
+                    "rotation", " ", 
+                    SubscriptBox["R", "A"], 
+                    RowBox[{"(", 
+                    RowBox[{"0", ",", 
+                    RowBox[{"(", 
+                    RowBox[{"Pi", "-", "\[Beta]"}], ")"}], ",", "0"}], ")"}], 
+                    " ", "for", " ", "molecule", " ", 
+                    RowBox[{"A", ".", " ", "Note"}], " ", "that", " ", "if", 
+                    " ", "we", " ", "want", " ", "the", " ", "x"}], "-", 
+                    RowBox[{
+                    "axis", " ", "to", " ", "point", " ", "towards", " ", 
+                    "the", " ", "joined", " ", "edge", " ", "we", " ", "have",
+                     " ", "to", " ", "change", " ", "the", " ", "first", " ", 
+                    "arguement", " ", "to", " ", "Pi", " ", "and", " ", 
+                    "change", " ", "the", " ", "sign", " ", "of", " ", "the", 
+                    " ", "2", "nd", " ", "arguement", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    "since", " ", "we", " ", "actually", " ", "want", " ", 
+                    "to", " ", "now", " ", "rotate", " ", "around", " ", 
+                    "the"}], " ", "-", 
+                    RowBox[{"y", " ", "axis"}]}], ")"}], " ", "this", " ", 
+                    "is", " ", "done", " ", "by", " ", "the", " ", "if", " ", 
+                    "statements"}]}], "*)"}], 
+                    RowBox[{"RotationTransform", "[", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{"f", ",", "Pi", ",", "0"}], "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"RotationTransform", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{"f", ",", 
+                    RowBox[{"-", "1"}], ",", "1"}], "]"}], "*", 
+                    RowBox[{"(", 
+                    RowBox[{"Pi", "-", "\[Beta]"}], ")"}]}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"TranslationTransform", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{"f", ",", 
+                    RowBox[{"-", "15"}], ",", "15"}], "]"}], ",", "0", ",", 
+                    "0"}], "}"}], "]"}]}], "}"}]}]}], "]"}], ",", 
+                 RowBox[{"GeometricTransformation", "[", 
+                  RowBox[{"pentaBlue", " ", 
+                   RowBox[{"(*", "B", "*)"}], ",", 
+                   RowBox[{"Composition", "@@", 
+                    RowBox[{"{", 
+                    RowBox[{"(*", " ", 
+                    RowBox[{
+                    "Same", " ", "rotations", " ", "for", " ", "the", " ", 
+                    "magnetic", " ", "here", " ", "as", " ", "for", " ", 
+                    "molecule", " ", "A"}], " ", "*)"}], 
+                    "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"RotationTransform", "[", 
+                    RowBox[{"\[Phi]", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"RotationTransform", "[", 
+                    RowBox[{"\[Theta]", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"TranslationTransform", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "15"}], ",", "0", ",", "0"}], "}"}], "]"}]}],
+                     "}"}]}]}], "]"}]}], "}"}], ",", 
+               RowBox[{"Axes", "\[Rule]", "a"}], ",", 
+               RowBox[{"AxesLabel", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ",", 
+               RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", 
+               RowBox[{"PlotRange", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"-", "40"}], ",", "40"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"-", "40"}], ",", "40"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"-", "40"}], ",", "40"}], "}"}]}], "}"}]}], ",", 
+               RowBox[{"Boxed", "\[Rule]", "a"}], ",", 
+               RowBox[{"ViewPoint", "->", 
+                RowBox[{"{", 
+                 RowBox[{"5", ",", " ", "10", ",", "6"}], "}"}]}]}], "]"}]}], 
+            ";"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Print", "[", 
+            RowBox[{
+            "\"\<Not a valid mode, try one of these \\n (1)\>\"", ",", " ", 
+             RowBox[{"InputForm", "[", "\"\<symmetricPassive\>\"", "]"}], 
+             ",", "\"\<\\n (2)\>\"", ",", 
+             RowBox[{"InputForm", "[", "\"\<symmetricActive\>\"", "]"}], ",", 
+             "\"\<\\n (3)\>\"", ",", 
+             RowBox[{"InputForm", "[", "\"\<singularPassive\>\"", "]"}], ",", 
+             "\"\<\\n make sure you've spelled it correctly\>\""}], "]"}]}], 
+          " ", "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}],
+       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"mov", "=", 
+      RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"i", "=", "1"}], ",", 
+       RowBox[{"i", "<", "4"}], ",", 
+       RowBox[{"i", "=", 
+        RowBox[{"i", "+", "1"}]}], ",", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"mov", ",", 
+         RowBox[{"frame", "[", 
+          RowBox[{"False", ",", "axesShown", ",", "Pi", ",", "0", ",", "0"}], 
+          "]"}]}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"i", "=", "1"}], ",", 
+       RowBox[{"i", "<", "4"}], ",", 
+       RowBox[{"i", "=", 
+        RowBox[{"i", "+", "1"}]}], ",", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"mov", ",", 
+         RowBox[{"frame", "[", 
+          RowBox[{
+          "flipVal", ",", "axesShown", ",", "Pi", ",", "0", ",", "0"}], 
+          "]"}]}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"mov", "=", 
+      RowBox[{"Join", "[", 
+       RowBox[{"mov", ",", 
+        RowBox[{"Reverse", "[", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"frame", "[", 
+            RowBox[{
+            "flipVal", ",", "axesShown", ",", "\[Beta]", ",", "0", ",", "0"}],
+             "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\[Beta]", ",", "final\[Beta]", ",", "Pi", ",", "step"}], 
+            "}"}]}], "]"}], "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"i", "=", "1"}], ",", 
+       RowBox[{"i", "<", "4"}], ",", 
+       RowBox[{"i", "=", 
+        RowBox[{"i", "+", "1"}]}], ",", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"mov", ",", 
+         RowBox[{"frame", "[", 
+          RowBox[{
+          "flipVal", ",", "axesShown", ",", "final\[Beta]", ",", "0", ",", 
+           "0"}], "]"}]}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"mov", "=", 
+      RowBox[{"Join", "[", 
+       RowBox[{"mov", ",", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"frame", "[", 
+           RowBox[{
+           "flipVal", ",", "axesShown", ",", "final\[Beta]", ",", "\[Phi]", 
+            ",", "0"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"\[Phi]", ",", "0", ",", "final\[Phi]", ",", "step"}], 
+           "}"}]}], "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"i", "=", "1"}], ",", 
+       RowBox[{"i", "<", "4"}], ",", 
+       RowBox[{"i", "=", 
+        RowBox[{"i", "+", "1"}]}], ",", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"mov", ",", 
+         RowBox[{"frame", "[", 
+          RowBox[{
+          "flipVal", ",", "axesShown", ",", "final\[Beta]", ",", 
+           "final\[Phi]", ",", "0"}], "]"}]}], "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"mov", "=", 
+      RowBox[{"Join", "[", 
+       RowBox[{"mov", ",", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"frame", "[", 
+           RowBox[{
+           "flipVal", ",", "axesShown", ",", "final\[Beta]", ",", 
+            "final\[Phi]", ",", "\[Theta]"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"\[Theta]", ",", "0", ",", "final\[Theta]", ",", "step"}], 
+           "}"}]}], "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"AppendTo", "[", 
+      RowBox[{"mov", ",", 
+       RowBox[{"frame", "[", 
+        RowBox[{
+        "flipVal", ",", "axesShown", ",", "final\[Beta]", ",", "final\[Phi]", 
+         ",", "final\[Theta]"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Export", "[", 
+      RowBox[{"fileName", ",", "mov"}], "]"}], ";"}]}], "\[IndentingNewLine]",
+    "]"}]}]], "Input",
+ CellChangeTimes->{{3.8325104405553427`*^9, 
+  3.83251051544944*^9}},ExpressionUUID->"b0fd7c44-8b47-4b65-a0d5-\
+4c9720fe3146"]
+}, Closed]],
+
+Cell[" ", "Text",
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {0, 0.5}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {1, 1}},
+ CellElementSpacings->{"CellMinHeight"->1},
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[0, 0, 1],
+ CellSize->{
+  Inherited, 3},ExpressionUUID->"08804bfb-87e0-4cfb-94de-192782fcac7d"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+function movie[mode,  axes,  flip,  final\[Beta]Degrees,  final\[Phi],  final\
+\[Theta],  fileName,  step:0.05]\
+\>", "Item",
+ CellChangeTimes->{{3.8325106938604097`*^9, 
+  3.8325107428734827`*^9}},ExpressionUUID->"74ebd56a-f452-45b0-9658-\
+e7dac10c9bcb"],
+
+Cell[CellGroupData[{
+
+Cell["mode: string", "Subitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.83251076911141*^9}, {
+  3.832510942584127*^9, 3.832510942950446*^9}, {3.832510989911283*^9, 
+  3.832510990202712*^9}},ExpressionUUID->"60d2248d-4f5b-42e6-a89a-\
+84722bd1989f"],
+
+Cell["\<\
+defines which mode to use when creating the movie see below for the types\
+\>", "Subsubitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.83251076911141*^9}, {
+  3.832510942584127*^9, 
+  3.8325109468946247`*^9}},ExpressionUUID->"9e7a306f-9323-4974-9b55-\
+c74b829f5ee6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["axes: boolean", "Subitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325109019083242`*^9}, {3.832510932506176*^9, 
+  3.8325109332531033`*^9}, {3.832510991814828*^9, 
+  3.8325109920998573`*^9}},ExpressionUUID->"d7ddedf8-afb9-4233-9621-\
+3ad177765712"],
+
+Cell["True - image will be boxed/have axes", "Subsubitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325109019083242`*^9}, {3.832510932506176*^9, 
+  3.832510936039267*^9}},ExpressionUUID->"24a35203-90e2-4509-b717-\
+05e89c0d5d88"],
+
+Cell["False - image will not be boxed/have axes", "Subsubitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325109019083242`*^9}, {3.832510932506176*^9, 
+  3.832510935489828*^9}},ExpressionUUID->"6e0cf71c-17af-4369-980d-\
+ac380bb48a55"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["flip: boolean", "Subitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
+  3.832510952502434*^9}, {3.8325109930486298`*^9, 
+  3.832510993211192*^9}},ExpressionUUID->"ac125def-c420-4689-b832-\
+577f99dd76db"],
+
+Cell["True - x-axis on molecules points towards joined edge", "Subsubitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
+  3.8325109555529947`*^9}},ExpressionUUID->"47de7546-068c-499f-8a8b-\
+c904b995ea0f"],
+
+Cell["False - x-axis on molecules \[OpenCurlyQuote]chase\[CloseCurlyQuote] \
+each other", "Subsubitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
+  3.8325109727120733`*^9}},ExpressionUUID->"52d1af9a-441f-4416-84ba-\
+203b82291dde"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["final\[Beta]Degrees: float", "Subitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
+  3.832510996054249*^9}},ExpressionUUID->"4f0288dc-bb5e-4086-a9ee-\
+8426e144aff2"],
+
+Cell["final bridging angle between molecules, given in Degrees", "Subsubitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
+  3.832511017425254*^9}},ExpressionUUID->"301d59be-9771-4d34-bb6e-\
+843e324a86a9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["final\[Phi]: float", "Subitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
+  3.8325110441608267`*^9}},ExpressionUUID->"c76ae402-fc15-4a93-9f0e-\
+25c3a5de839f"],
+
+Cell["\<\
+final azimuthal angle of magnetic field (NOTE: final result depends on mode \
+chosen due to differing meanings of \[Phi] = 0, see note below)\
+\>", "Subsubitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
+  3.8325110629198*^9}, {3.832511158744585*^9, 3.832511160029785*^9}, {
+  3.8325112709510193`*^9, 
+  3.832511278974515*^9}},ExpressionUUID->"8c645fe0-f551-4e77-84fb-\
+65937d02089c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["final\[Theta]: float", "Subitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
+  3.832511035777852*^9}, {3.832511162178485*^9, 
+  3.832511162178722*^9}},ExpressionUUID->"1c64ab28-632f-446e-b0fe-\
+98acc9fca307"],
+
+Cell["\<\
+final polar angle of magnetic field (NOTE: final result depends on mode \
+chosen due to differing meanings of \[Theta] = 0, see note below)\
+\>", "Subsubitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
+  3.832511035777852*^9}, {3.832511162898457*^9, 3.832511163566481*^9}, {
+  3.83251120866325*^9, 
+  3.832511285079398*^9}},ExpressionUUID->"46f9ee03-63fd-4326-9409-\
+5336d562a75d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["fileName: string", "Subitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
+  3.832511035777852*^9}, {3.832511162898457*^9, 3.832511163566481*^9}, {
+  3.83251120866325*^9, 
+  3.832511290595707*^9}},ExpressionUUID->"95f1faa6-c1db-4ae5-86ed-\
+0b1228421845"],
+
+Cell["\<\
+absolute path to place resulting generated gif should be stored\
+\>", "Subsubitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
+  3.832511035777852*^9}, {3.832511162898457*^9, 3.832511163566481*^9}, {
+  3.83251120866325*^9, 
+  3.832511327464023*^9}},ExpressionUUID->"17b9acea-8fbe-49bf-a9b5-\
+1dde9d542a67"],
+
+Cell["should in in extension \[OpenCurlyDoubleQuote].gif\
+\[CloseCurlyDoubleQuote]", "Subsubitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
+  3.832511035777852*^9}, {3.832511162898457*^9, 3.832511163566481*^9}, {
+  3.83251120866325*^9, 
+  3.832511341398082*^9}},ExpressionUUID->"dee00943-5c12-4bee-af9d-\
+f8397f177bb6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["step: float", "Subitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
+  3.832511035777852*^9}, {3.832511162898457*^9, 3.832511163566481*^9}, {
+  3.83251120866325*^9, 
+  3.832511350632297*^9}},ExpressionUUID->"373bccc3-8482-4908-bf33-\
+d26a7509cf36"],
+
+Cell["\<\
+step size between successive images, smaller will take longer (and result in \
+a larger file) but may look smoother\
+\>", "Subsubitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
+  3.832511035777852*^9}, {3.832511162898457*^9, 3.832511163566481*^9}, {
+  3.83251120866325*^9, 
+  3.832511395477775*^9}},ExpressionUUID->"da8d6504-960f-47de-9c31-\
+f510572b732c"],
+
+Cell["DEFAULT: 0.05", "Subsubitem",
+ CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
+  3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
+  3.832511035777852*^9}, {3.832511162898457*^9, 3.832511163566481*^9}, {
+  3.83251120866325*^9, 
+  3.8325113548951607`*^9}},ExpressionUUID->"a296a0ac-f8c5-4fde-902e-\
+8b515cefbd00"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Implemented types of rotations", "Item",
+ CellChangeTimes->{{3.832510790080728*^9, 
+  3.832510795043095*^9}},ExpressionUUID->"55f320bf-c220-495a-9975-\
+000b5f547271"],
+
+Cell["\<\
+\[OpenCurlyDoubleQuote]symmetricPassive\[CloseCurlyDoubleQuote]: rotates \
+molecules together (symmetrically) and then performs a passive rotation of \
+the dimer into the final magnetic field orientation\
+\>", "Subitem",
+ CellChangeTimes->{{3.832510790080728*^9, 
+  3.832510796798293*^9}},ExpressionUUID->"b1d31006-44d3-44b9-97b4-\
+0a7ac7df90b1"],
+
+Cell["\<\
+\[OpenCurlyDoubleQuote]symmetricActive\[CloseCurlyDoubleQuote]: rotates \
+molecules together (symmetrically) and then performs an active rotation of \
+the magnetic field axes, this should end up with the same relative \
+orientation of the dimer and magnetic field\
+\>", "Subitem",
+ CellChangeTimes->{{3.832510790080728*^9, 
+  3.832510806018368*^9}},ExpressionUUID->"23763074-e1b6-4aea-9cb0-\
+53bb160219aa"],
+
+Cell["\<\
+\[OpenCurlyDoubleQuote]singularActive\[CloseCurlyDoubleQuote]: rotates only \
+one molecule and then performs a passive rotation of the dimer into the final \
+magnetic field orientation. NOTE: in this case \[Phi] = 0, \[Theta] = 0 means \
+the un-rotated molecule is coincident with the magnetic field, while in \
+\[OpenCurlyDoubleQuote]symmtricXXX\[CloseCurlyDoubleQuote] \[Phi] = 0, \
+\[Theta] = 0 means the magnetic field is coincident with the shared dimer \
+axes. Thus equal values of \[Phi],\[Theta] do not generate equivalent final \
+gifs\
+\>", "Subitem",
+ CellChangeTimes->{{3.832510790080728*^9, 
+  3.832510806245698*^9}},ExpressionUUID->"c6c6fe68-cc40-48f4-b641-\
+a172ef16f3fc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["TEMPLATE", "Item",
+ CellChangeTimes->{{3.83251147873803*^9, 
+  3.8325115012243547`*^9}},ExpressionUUID->"e3e462c2-9ee3-4fac-a111-\
+13f3f7bb1cb2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"movie", "[", 
+   RowBox[{
+   "\"\<symmetricPassive\>\"", ",", "False", ",", "False", ",", "111", ",", 
+    "90", ",", "0", ",", "\"\<User/name/Documents/myMovie.gif\>\""}], "]"}], 
+  RowBox[{"(*", 
+   RowBox[{"uses", " ", "defulat", " ", "step", " ", "size"}], " ", 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.832511481980749*^9, 
+  3.832511574074494*^9}},ExpressionUUID->"02782038-f2df-4927-97f2-\
+9579ca93d8c3"]
 }, Open  ]]
 },
-WindowSize->{1421, 738},
-WindowMargins->{{Automatic, 5}, {Automatic, 0}},
+WindowSize->{846, 777},
+WindowMargins->{{Automatic, 46}, {Automatic, 0}},
 TaggingRules->{
  "WelcomeScreenSettings" -> {"FEStarting" -> False}, "TryRealOnly" -> False},
+SpellingDictionaries->{"CorrectWords"->{"final\[Phi]"}},
 FrontEndVersion->"12.2 for Mac OS X x86 (64-bit) (December 12, 2020)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"2ed2d7a1-4fb1-4f97-866a-06f9e88b2e80"
@@ -1810,16 +2767,16 @@ Cell[580, 22, 642, 15, 52, "Input",ExpressionUUID->"2007b055-099e-45cd-bb4f-290c
 Cell[1225, 39, 6467, 109, 303, "Output",ExpressionUUID->"dfc14158-75f0-457d-a967-d3bc12a15a00"]
 }, Open  ]],
 Cell[7707, 151, 232, 4, 48, "Item",ExpressionUUID->"89f4b3dc-68e4-409f-9917-6f8a366ef8c0"],
-Cell[7942, 157, 250, 4, 43, "Item",ExpressionUUID->"266771ab-9aff-4b3d-bc2b-1ead65fb3f0b"],
+Cell[7942, 157, 250, 4, 75, "Item",ExpressionUUID->"266771ab-9aff-4b3d-bc2b-1ead65fb3f0b"],
 Cell[CellGroupData[{
-Cell[8217, 165, 528, 8, 63, "Item",ExpressionUUID->"38cd5803-1631-4155-80ff-2904227cd7f1"],
+Cell[8217, 165, 528, 8, 89, "Item",ExpressionUUID->"38cd5803-1631-4155-80ff-2904227cd7f1"],
 Cell[8748, 175, 143, 3, 30, "Input",ExpressionUUID->"de8e9c6b-dccf-4d22-94ae-4bdd174ddf0a"],
 Cell[8894, 180, 2136, 51, 73, "Input",ExpressionUUID->"843e8873-8df7-49ad-9b6f-b203b1e6ed67"],
 Cell[11033, 233, 35392, 924, 1375, "Input",ExpressionUUID->"6329badf-f072-4a84-9f9f-b65de62acfcf"]
 }, Closed]],
 Cell[46440, 1160, 205, 3, 44, "Item",ExpressionUUID->"fe539733-57ea-41db-9608-e42f0ee41e44"],
 Cell[CellGroupData[{
-Cell[46670, 1167, 411, 8, 32, "Item",ExpressionUUID->"474356e1-e4e8-4f93-bede-d4feb5362615"],
+Cell[46670, 1167, 411, 8, 53, "Item",ExpressionUUID->"474356e1-e4e8-4f93-bede-d4feb5362615"],
 Cell[CellGroupData[{
 Cell[47106, 1179, 694, 12, 30, "Input",ExpressionUUID->"6603d6e0-7a21-43f0-b3c4-2aaab1d4d441"],
 Cell[47803, 1193, 11423, 185, 359, "Output",ExpressionUUID->"e61202a5-e7d3-4f2b-8c62-a3ef89ea89ba"]
@@ -1833,6 +2790,60 @@ Cell[73533, 1692, 331, 10, 6, "Text",ExpressionUUID->"51f70dd7-79f9-4c61-8a42-48
 Cell[CellGroupData[{
 Cell[73889, 1706, 184, 3, 30, "Input",ExpressionUUID->"c8eefd86-9fdc-4f43-bf8a-19759a490d8e"],
 Cell[74076, 1711, 3776, 74, 789, "Output",ExpressionUUID->"5733d72f-a33b-45e2-b5a4-8120efe094d2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[77889, 1790, 185, 3, 70, "Item",ExpressionUUID->"d04488d4-bbed-42c7-9a98-72eaea5b0a25"],
+Cell[78077, 1795, 32065, 683, 2070, "Input",ExpressionUUID->"b0fd7c44-8b47-4b65-a0d5-4c9720fe3146"]
+}, Closed]],
+Cell[110157, 2481, 331, 10, 6, "Text",ExpressionUUID->"08804bfb-87e0-4cfb-94de-192782fcac7d"],
+Cell[CellGroupData[{
+Cell[110513, 2495, 265, 6, 32, "Item",ExpressionUUID->"74ebd56a-f452-45b0-9658-e7dac10c9bcb"],
+Cell[CellGroupData[{
+Cell[110803, 2505, 253, 4, 27, "Subitem",ExpressionUUID->"60d2248d-4f5b-42e6-a89a-84722bd1989f"],
+Cell[111059, 2511, 281, 6, 25, "Subsubitem",ExpressionUUID->"9e7a306f-9323-4974-9b55-c74b829f5ee6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[111377, 2522, 312, 5, 27, "Subitem",ExpressionUUID->"d7ddedf8-afb9-4233-9621-3ad177765712"],
+Cell[111692, 2529, 285, 4, 25, "Subsubitem",ExpressionUUID->"24a35203-90e2-4509-b717-05e89c0d5d88"],
+Cell[111980, 2535, 290, 4, 25, "Subsubitem",ExpressionUUID->"6e0cf71c-17af-4369-980d-ac380bb48a55"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[112307, 2544, 310, 5, 27, "Subitem",ExpressionUUID->"ac125def-c420-4689-b832-577f99dd76db"],
+Cell[112620, 2551, 304, 4, 25, "Subsubitem",ExpressionUUID->"47de7546-068c-499f-8a8b-c904b995ea0f"],
+Cell[112927, 2557, 332, 5, 25, "Subsubitem",ExpressionUUID->"52d1af9a-441f-4416-84ba-203b82291dde"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[113296, 2567, 272, 4, 27, "Subitem",ExpressionUUID->"4f0288dc-bb5e-4086-a9ee-8426e144aff2"],
+Cell[113571, 2573, 305, 4, 25, "Subsubitem",ExpressionUUID->"301d59be-9771-4d34-bb6e-843e324a86a9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[113913, 2582, 266, 4, 27, "Subitem",ExpressionUUID->"c76ae402-fc15-4a93-9f0e-25c3a5de839f"],
+Cell[114182, 2588, 496, 9, 43, "Subsubitem",ExpressionUUID->"8c645fe0-f551-4e77-84fb-65937d02089c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[114715, 2602, 315, 5, 27, "Subitem",ExpressionUUID->"1c64ab28-632f-446e-b0fe-98acc9fca307"],
+Cell[115033, 2609, 493, 9, 43, "Subsubitem",ExpressionUUID->"46f9ee03-63fd-4326-9409-5336d562a75d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[115563, 2623, 359, 6, 27, "Subitem",ExpressionUUID->"95f1faa6-c1db-4ae5-86ed-0b1228421845"],
+Cell[115925, 2631, 417, 8, 25, "Subsubitem",ExpressionUUID->"17b9acea-8fbe-49bf-a9b5-1dde9d542a67"],
+Cell[116345, 2641, 422, 7, 25, "Subsubitem",ExpressionUUID->"dee00943-5c12-4bee-af9d-f8397f177bb6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[116804, 2653, 354, 6, 27, "Subitem",ExpressionUUID->"373bccc3-8482-4908-bf33-d26a7509cf36"],
+Cell[117161, 2661, 469, 9, 25, "Subsubitem",ExpressionUUID->"da8d6504-960f-47de-9c31-f510572b732c"],
+Cell[117633, 2672, 361, 6, 25, "Subsubitem",ExpressionUUID->"a296a0ac-f8c5-4fde-902e-8b515cefbd00"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[118043, 2684, 172, 3, 32, "Item",ExpressionUUID->"55f320bf-c220-495a-9975-000b5f547271"],
+Cell[118218, 2689, 356, 7, 45, "Subitem",ExpressionUUID->"b1d31006-44d3-44b9-97b4-0a7ac7df90b1"],
+Cell[118577, 2698, 416, 8, 45, "Subitem",ExpressionUUID->"23763074-e1b6-4aea-9cb0-53bb160219aa"],
+Cell[118996, 2708, 696, 12, 83, "Subitem",ExpressionUUID->"c6c6fe68-cc40-48f4-b641-a172ef16f3fc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[119729, 2725, 151, 3, 32, "Item",ExpressionUUID->"e3e462c2-9ee3-4fac-a111-13f3f7bb1cb2"],
+Cell[119883, 2730, 450, 11, 52, "Input",ExpressionUUID->"02782038-f2df-4927-97f2-9579ca93d8c3"]
 }, Open  ]]
 }
 ]
