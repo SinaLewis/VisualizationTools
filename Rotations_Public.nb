@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    125932,       2843]
-NotebookOptionsPosition[    120349,       2744]
-NotebookOutlinePosition[    120896,       2763]
-CellTagsIndexPosition[    120853,       2760]
+NotebookDataLength[    128296,       2880]
+NotebookOptionsPosition[    122292,       2775]
+NotebookOutlinePosition[    122839,       2794]
+CellTagsIndexPosition[    122796,       2791]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2493,25 +2493,23 @@ Cell[" ", "Text",
 
 Cell[CellGroupData[{
 
-Cell["\<\
-function movie[mode,  axes,  flip,  final\[Beta]Degrees,  final\[Phi],  final\
-\[Theta],  fileName,  step:0.05]\
-\>", "Item",
+Cell[TextData[StyleBox["function movie[mode,  axes,  flip,  \
+final\[Beta]Degrees,  final\[Phi],  final\[Theta],  fileName,  step:0.05]", \
+"Subsection"]], "Item",
  CellChangeTimes->{{3.8325106938604097`*^9, 
   3.8325107428734827`*^9}},ExpressionUUID->"74ebd56a-f452-45b0-9658-\
 e7dac10c9bcb"],
 
 Cell[CellGroupData[{
 
-Cell["mode: string", "Subitem",
+Cell[TextData[StyleBox["mode: string", "Subsubsection"]], "Subitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.83251076911141*^9}, {
   3.832510942584127*^9, 3.832510942950446*^9}, {3.832510989911283*^9, 
   3.832510990202712*^9}},ExpressionUUID->"60d2248d-4f5b-42e6-a89a-\
 84722bd1989f"],
 
-Cell["\<\
-defines which mode to use when creating the movie see below for the types\
-\>", "Subsubitem",
+Cell[TextData[StyleBox["defines which mode to use when creating the movie see \
+below for the types", "Text"]], "Subsubitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.83251076911141*^9}, {
   3.832510942584127*^9, 
   3.8325109468946247`*^9}},ExpressionUUID->"9e7a306f-9323-4974-9b55-\
@@ -2520,20 +2518,22 @@ c74b829f5ee6"]
 
 Cell[CellGroupData[{
 
-Cell["axes: boolean", "Subitem",
+Cell[TextData[StyleBox["axes: boolean", "Subsubsection"]], "Subitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325109019083242`*^9}, {3.832510932506176*^9, 
   3.8325109332531033`*^9}, {3.832510991814828*^9, 
   3.8325109920998573`*^9}},ExpressionUUID->"d7ddedf8-afb9-4233-9621-\
 3ad177765712"],
 
-Cell["True - image will be boxed/have axes", "Subsubitem",
+Cell[TextData[StyleBox["True - image will be boxed/have axes", "Text"]], \
+"Subsubitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325109019083242`*^9}, {3.832510932506176*^9, 
   3.832510936039267*^9}},ExpressionUUID->"24a35203-90e2-4509-b717-\
 05e89c0d5d88"],
 
-Cell["False - image will not be boxed/have axes", "Subsubitem",
+Cell[TextData[StyleBox["False - image will not be boxed/have axes", "Text"]], \
+"Subsubitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325109019083242`*^9}, {3.832510932506176*^9, 
   3.832510935489828*^9}},ExpressionUUID->"6e0cf71c-17af-4369-980d-\
@@ -2542,21 +2542,22 @@ ac380bb48a55"]
 
 Cell[CellGroupData[{
 
-Cell["flip: boolean", "Subitem",
+Cell[TextData[StyleBox["flip: boolean", "Subsubsection"]], "Subitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
   3.832510952502434*^9}, {3.8325109930486298`*^9, 
   3.832510993211192*^9}},ExpressionUUID->"ac125def-c420-4689-b832-\
 577f99dd76db"],
 
-Cell["True - x-axis on molecules points towards joined edge", "Subsubitem",
+Cell[TextData[StyleBox["True - x-axis on molecules points towards joined \
+edge", "Text"]], "Subsubitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
   3.8325109555529947`*^9}},ExpressionUUID->"47de7546-068c-499f-8a8b-\
 c904b995ea0f"],
 
-Cell["False - x-axis on molecules \[OpenCurlyQuote]chase\[CloseCurlyQuote] \
-each other", "Subsubitem",
+Cell[TextData[StyleBox["False - x-axis on molecules \[OpenCurlyQuote]chase\
+\[CloseCurlyQuote] each other", "Text"]], "Subsubitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
   3.8325109727120733`*^9}},ExpressionUUID->"52d1af9a-441f-4416-84ba-\
@@ -2565,13 +2566,15 @@ each other", "Subsubitem",
 
 Cell[CellGroupData[{
 
-Cell["final\[Beta]Degrees: float", "Subitem",
+Cell[TextData[StyleBox["final\[Beta]Degrees: float", "Subsubsection"]], \
+"Subitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
   3.832510996054249*^9}},ExpressionUUID->"4f0288dc-bb5e-4086-a9ee-\
 8426e144aff2"],
 
-Cell["final bridging angle between molecules, given in Degrees", "Subsubitem",
+Cell[TextData[StyleBox["final bridging angle between molecules, given in \
+Degrees", "Text"]], "Subsubitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
   3.832511017425254*^9}},ExpressionUUID->"301d59be-9771-4d34-bb6e-\
@@ -2580,16 +2583,15 @@ Cell["final bridging angle between molecules, given in Degrees", "Subsubitem",
 
 Cell[CellGroupData[{
 
-Cell["final\[Phi]: float", "Subitem",
+Cell[TextData[StyleBox["final\[Phi]: float", "Subsubsection"]], "Subitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
   3.8325110441608267`*^9}},ExpressionUUID->"c76ae402-fc15-4a93-9f0e-\
 25c3a5de839f"],
 
-Cell["\<\
-final azimuthal angle of magnetic field (NOTE: final result depends on mode \
-chosen due to differing meanings of \[Phi] = 0, see note below)\
-\>", "Subsubitem",
+Cell[TextData[StyleBox["final azimuthal angle of magnetic field (NOTE: final \
+result depends on mode chosen due to differing meanings of \[Phi] = 0, see \
+note below)", "Text"]], "Subsubitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
   3.8325110629198*^9}, {3.832511158744585*^9, 3.832511160029785*^9}, {
@@ -2600,17 +2602,16 @@ chosen due to differing meanings of \[Phi] = 0, see note below)\
 
 Cell[CellGroupData[{
 
-Cell["final\[Theta]: float", "Subitem",
+Cell[TextData[StyleBox["final\[Theta]: float", "Subsubsection"]], "Subitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
   3.832511035777852*^9}, {3.832511162178485*^9, 
   3.832511162178722*^9}},ExpressionUUID->"1c64ab28-632f-446e-b0fe-\
 98acc9fca307"],
 
-Cell["\<\
-final polar angle of magnetic field (NOTE: final result depends on mode \
-chosen due to differing meanings of \[Theta] = 0, see note below)\
-\>", "Subsubitem",
+Cell[TextData[StyleBox["final polar angle of magnetic field (NOTE: final \
+result depends on mode chosen due to differing meanings of \[Theta] = 0, see \
+note below)", "Text"]], "Subsubitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
   3.832511035777852*^9}, {3.832511162898457*^9, 3.832511163566481*^9}, {
@@ -2621,7 +2622,7 @@ chosen due to differing meanings of \[Theta] = 0, see note below)\
 
 Cell[CellGroupData[{
 
-Cell["fileName: string", "Subitem",
+Cell[TextData[StyleBox["fileName: string", "Subsubsection"]], "Subitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
   3.832511035777852*^9}, {3.832511162898457*^9, 3.832511163566481*^9}, {
@@ -2629,9 +2630,8 @@ Cell["fileName: string", "Subitem",
   3.832511290595707*^9}},ExpressionUUID->"95f1faa6-c1db-4ae5-86ed-\
 0b1228421845"],
 
-Cell["\<\
-absolute path to place resulting generated gif should be stored\
-\>", "Subsubitem",
+Cell[TextData[StyleBox["absolute path to place resulting generated gif should \
+be stored", "Text"]], "Subsubitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
   3.832511035777852*^9}, {3.832511162898457*^9, 3.832511163566481*^9}, {
@@ -2639,19 +2639,19 @@ absolute path to place resulting generated gif should be stored\
   3.832511327464023*^9}},ExpressionUUID->"17b9acea-8fbe-49bf-a9b5-\
 1dde9d542a67"],
 
-Cell["should in in extension \[OpenCurlyDoubleQuote].gif\
-\[CloseCurlyDoubleQuote]", "Subsubitem",
+Cell[TextData[StyleBox["should end in extension \[OpenCurlyDoubleQuote].gif\
+\[CloseCurlyDoubleQuote]", "Text"]], "Subsubitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
   3.832511035777852*^9}, {3.832511162898457*^9, 3.832511163566481*^9}, {
-  3.83251120866325*^9, 
-  3.832511341398082*^9}},ExpressionUUID->"dee00943-5c12-4bee-af9d-\
+  3.83251120866325*^9, 3.832511341398082*^9}, {3.832511801715992*^9, 
+  3.8325118028130407`*^9}},ExpressionUUID->"dee00943-5c12-4bee-af9d-\
 f8397f177bb6"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["step: float", "Subitem",
+Cell[TextData[StyleBox["step: float", "Subsubsection"]], "Subitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
   3.832511035777852*^9}, {3.832511162898457*^9, 3.832511163566481*^9}, {
@@ -2659,10 +2659,9 @@ Cell["step: float", "Subitem",
   3.832511350632297*^9}},ExpressionUUID->"373bccc3-8482-4908-bf33-\
 d26a7509cf36"],
 
-Cell["\<\
-step size between successive images, smaller will take longer (and result in \
-a larger file) but may look smoother\
-\>", "Subsubitem",
+Cell[TextData[StyleBox["step size between successive images, smaller will \
+take longer (and result in a larger file) but may look smoother", "Text"]], \
+"Subsubitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
   3.832511035777852*^9}, {3.832511162898457*^9, 3.832511163566481*^9}, {
@@ -2670,7 +2669,7 @@ a larger file) but may look smoother\
   3.832511395477775*^9}},ExpressionUUID->"da8d6504-960f-47de-9c31-\
 f510572b732c"],
 
-Cell["DEFAULT: 0.05", "Subsubitem",
+Cell[TextData[StyleBox["DEFAULT: 0.05", "Text"]], "Subsubitem",
  CellChangeTimes->{{3.8325106938604097`*^9, 3.832510755409028*^9}, {
   3.8325108125772133`*^9, 3.8325108652436247`*^9}, {3.832510904425002*^9, 
   3.832511035777852*^9}, {3.832511162898457*^9, 3.832511163566481*^9}, {
@@ -2682,43 +2681,75 @@ Cell["DEFAULT: 0.05", "Subsubitem",
 
 Cell[CellGroupData[{
 
-Cell["Implemented types of rotations", "Item",
+Cell[TextData[StyleBox["Implemented types of rotations", "Subsection"]], \
+"Item",
  CellChangeTimes->{{3.832510790080728*^9, 
   3.832510795043095*^9}},ExpressionUUID->"55f320bf-c220-495a-9975-\
 000b5f547271"],
 
-Cell["\<\
-\[OpenCurlyDoubleQuote]symmetricPassive\[CloseCurlyDoubleQuote]: rotates \
-molecules together (symmetrically) and then performs a passive rotation of \
-the dimer into the final magnetic field orientation\
-\>", "Subitem",
+Cell[TextData[{
+ StyleBox["\[OpenCurlyDoubleQuote]symmetricPassive\[CloseCurlyDoubleQuote]", 
+  "Subsubsection"],
+ StyleBox[": rotates molecules together (symmetrically) and then performs a \
+passive rotation of the dimer into the final magnetic field orientation", 
+  "Text"]
+}], "Subitem",
  CellChangeTimes->{{3.832510790080728*^9, 
   3.832510796798293*^9}},ExpressionUUID->"b1d31006-44d3-44b9-97b4-\
 0a7ac7df90b1"],
 
-Cell["\<\
-\[OpenCurlyDoubleQuote]symmetricActive\[CloseCurlyDoubleQuote]: rotates \
-molecules together (symmetrically) and then performs an active rotation of \
-the magnetic field axes, this should end up with the same relative \
-orientation of the dimer and magnetic field\
-\>", "Subitem",
+Cell[TextData[{
+ StyleBox["\[OpenCurlyDoubleQuote]symmetricActive\[CloseCurlyDoubleQuote]", 
+  "Subsubsection"],
+ StyleBox[": rotates molecules together (symmetrically) and then performs an \
+active rotation of the magnetic field axes, this should end up with the same \
+relative orientation of the dimer and magnetic field", "Text"]
+}], "Subitem",
  CellChangeTimes->{{3.832510790080728*^9, 
   3.832510806018368*^9}},ExpressionUUID->"23763074-e1b6-4aea-9cb0-\
 53bb160219aa"],
 
-Cell["\<\
-\[OpenCurlyDoubleQuote]singularActive\[CloseCurlyDoubleQuote]: rotates only \
-one molecule and then performs a passive rotation of the dimer into the final \
-magnetic field orientation. NOTE: in this case \[Phi] = 0, \[Theta] = 0 means \
-the un-rotated molecule is coincident with the magnetic field, while in \
-\[OpenCurlyDoubleQuote]symmtricXXX\[CloseCurlyDoubleQuote] \[Phi] = 0, \
-\[Theta] = 0 means the magnetic field is coincident with the shared dimer \
-axes. Thus equal values of \[Phi],\[Theta] do not generate equivalent final \
-gifs\
-\>", "Subitem",
- CellChangeTimes->{{3.832510790080728*^9, 
-  3.832510806245698*^9}},ExpressionUUID->"c6c6fe68-cc40-48f4-b641-\
+Cell[TextData[{
+ StyleBox["\[OpenCurlyDoubleQuote]singularActive\[CloseCurlyDoubleQuote]", 
+  "Subsubsection"],
+ StyleBox[": rotates only one molecule and then performs a passive rotation \
+of the dimer into the final magnetic field orientation.", "Text"]
+}], "Subitem",
+ CellChangeTimes->{{3.832510790080728*^9, 3.832510806245698*^9}, {
+  3.8325118424512777`*^9, 
+  3.8325118429535027`*^9}},ExpressionUUID->"c6c6fe68-cc40-48f4-b641-\
 a172ef16f3fc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Note on meaning of \[Phi] = 0, \[Theta] = 0", \
+"Subsection"]], "Item",
+ CellChangeTimes->{{3.8325118243355722`*^9, 
+  3.832511844392054*^9}},ExpressionUUID->"98c06234-697f-46d3-a95b-\
+4017b965b16b"],
+
+Cell[TextData[StyleBox["In the \[OpenCurlyDoubleQuote]symmtricXXX\
+\[CloseCurlyDoubleQuote] case \[Phi] = 0, \[Theta] = 0 means the magnetic \
+field is coincident with the shared dimer axes", "Text"]], "Subitem",
+ CellChangeTimes->{{3.8325118243355722`*^9, 
+  3.832511876148323*^9}},ExpressionUUID->"517c6121-f997-4a11-9e29-\
+b62e8be83ac6"],
+
+Cell[TextData[StyleBox["In the \[OpenCurlyDoubleQuote]singularXXX\
+\[CloseCurlyDoubleQuote] case \[Phi] = 0, \[Theta] = 0 means the un-rotated \
+molecule is coincident with the magnetic field", "Text"]], "Subitem",
+ CellChangeTimes->{{3.8325118243355722`*^9, 
+  3.832511894628026*^9}},ExpressionUUID->"7bedde16-1ff8-4171-a065-\
+05a262eb10f7"],
+
+Cell[TextData[StyleBox["Thus equal values of \[Phi], \[Theta] do not generate \
+equivalent final gifs when using \[OpenCurlyDoubleQuote]symmetricXXX\
+\[CloseCurlyDoubleQuote] versus \[OpenCurlyDoubleQuote]singularXXX\
+\[CloseCurlyDoubleQuote]", "Text"]], "Subitem",
+ CellChangeTimes->{{3.8325118243355722`*^9, 
+  3.8325119231061487`*^9}},ExpressionUUID->"61d7e16f-f06f-4c79-b95b-\
+285333c99f76"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2797,53 +2828,59 @@ Cell[78077, 1795, 32065, 683, 2070, "Input",ExpressionUUID->"b0fd7c44-8b47-4b65-
 }, Closed]],
 Cell[110157, 2481, 331, 10, 6, "Text",ExpressionUUID->"08804bfb-87e0-4cfb-94de-192782fcac7d"],
 Cell[CellGroupData[{
-Cell[110513, 2495, 265, 6, 32, "Item",ExpressionUUID->"74ebd56a-f452-45b0-9658-e7dac10c9bcb"],
+Cell[110513, 2495, 293, 5, 38, "Item",ExpressionUUID->"74ebd56a-f452-45b0-9658-e7dac10c9bcb"],
 Cell[CellGroupData[{
-Cell[110803, 2505, 253, 4, 27, "Subitem",ExpressionUUID->"60d2248d-4f5b-42e6-a89a-84722bd1989f"],
-Cell[111059, 2511, 281, 6, 25, "Subsubitem",ExpressionUUID->"9e7a306f-9323-4974-9b55-c74b829f5ee6"]
+Cell[110831, 2504, 290, 4, 33, "Subitem",ExpressionUUID->"60d2248d-4f5b-42e6-a89a-84722bd1989f"],
+Cell[111124, 2510, 303, 5, 28, "Subsubitem",ExpressionUUID->"9e7a306f-9323-4974-9b55-c74b829f5ee6"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[111377, 2522, 312, 5, 27, "Subitem",ExpressionUUID->"d7ddedf8-afb9-4233-9621-3ad177765712"],
-Cell[111692, 2529, 285, 4, 25, "Subsubitem",ExpressionUUID->"24a35203-90e2-4509-b717-05e89c0d5d88"],
-Cell[111980, 2535, 290, 4, 25, "Subsubitem",ExpressionUUID->"6e0cf71c-17af-4369-980d-ac380bb48a55"]
+Cell[111464, 2520, 349, 5, 33, "Subitem",ExpressionUUID->"d7ddedf8-afb9-4233-9621-3ad177765712"],
+Cell[111816, 2527, 315, 5, 28, "Subsubitem",ExpressionUUID->"24a35203-90e2-4509-b717-05e89c0d5d88"],
+Cell[112134, 2534, 320, 5, 28, "Subsubitem",ExpressionUUID->"6e0cf71c-17af-4369-980d-ac380bb48a55"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[112307, 2544, 310, 5, 27, "Subitem",ExpressionUUID->"ac125def-c420-4689-b832-577f99dd76db"],
-Cell[112620, 2551, 304, 4, 25, "Subsubitem",ExpressionUUID->"47de7546-068c-499f-8a8b-c904b995ea0f"],
-Cell[112927, 2557, 332, 5, 25, "Subsubitem",ExpressionUUID->"52d1af9a-441f-4416-84ba-203b82291dde"]
+Cell[112491, 2544, 347, 5, 33, "Subitem",ExpressionUUID->"ac125def-c420-4689-b832-577f99dd76db"],
+Cell[112841, 2551, 334, 5, 28, "Subsubitem",ExpressionUUID->"47de7546-068c-499f-8a8b-c904b995ea0f"],
+Cell[113178, 2558, 360, 5, 28, "Subsubitem",ExpressionUUID->"52d1af9a-441f-4416-84ba-203b82291dde"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[113296, 2567, 272, 4, 27, "Subitem",ExpressionUUID->"4f0288dc-bb5e-4086-a9ee-8426e144aff2"],
-Cell[113571, 2573, 305, 4, 25, "Subsubitem",ExpressionUUID->"301d59be-9771-4d34-bb6e-843e324a86a9"]
+Cell[113575, 2568, 311, 5, 33, "Subitem",ExpressionUUID->"4f0288dc-bb5e-4086-a9ee-8426e144aff2"],
+Cell[113889, 2575, 335, 5, 28, "Subsubitem",ExpressionUUID->"301d59be-9771-4d34-bb6e-843e324a86a9"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[113913, 2582, 266, 4, 27, "Subitem",ExpressionUUID->"c76ae402-fc15-4a93-9f0e-25c3a5de839f"],
-Cell[114182, 2588, 496, 9, 43, "Subsubitem",ExpressionUUID->"8c645fe0-f551-4e77-84fb-65937d02089c"]
+Cell[114261, 2585, 303, 4, 33, "Subitem",ExpressionUUID->"c76ae402-fc15-4a93-9f0e-25c3a5de839f"],
+Cell[114567, 2591, 518, 8, 51, "Subsubitem",ExpressionUUID->"8c645fe0-f551-4e77-84fb-65937d02089c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[114715, 2602, 315, 5, 27, "Subitem",ExpressionUUID->"1c64ab28-632f-446e-b0fe-98acc9fca307"],
-Cell[115033, 2609, 493, 9, 43, "Subsubitem",ExpressionUUID->"46f9ee03-63fd-4326-9409-5336d562a75d"]
+Cell[115122, 2604, 352, 5, 33, "Subitem",ExpressionUUID->"1c64ab28-632f-446e-b0fe-98acc9fca307"],
+Cell[115477, 2611, 515, 8, 51, "Subsubitem",ExpressionUUID->"46f9ee03-63fd-4326-9409-5336d562a75d"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[115563, 2623, 359, 6, 27, "Subitem",ExpressionUUID->"95f1faa6-c1db-4ae5-86ed-0b1228421845"],
-Cell[115925, 2631, 417, 8, 25, "Subsubitem",ExpressionUUID->"17b9acea-8fbe-49bf-a9b5-1dde9d542a67"],
-Cell[116345, 2641, 422, 7, 25, "Subsubitem",ExpressionUUID->"dee00943-5c12-4bee-af9d-f8397f177bb6"]
+Cell[116029, 2624, 396, 6, 33, "Subitem",ExpressionUUID->"95f1faa6-c1db-4ae5-86ed-0b1228421845"],
+Cell[116428, 2632, 439, 7, 28, "Subsubitem",ExpressionUUID->"17b9acea-8fbe-49bf-a9b5-1dde9d542a67"],
+Cell[116870, 2641, 499, 7, 28, "Subsubitem",ExpressionUUID->"dee00943-5c12-4bee-af9d-f8397f177bb6"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[116804, 2653, 354, 6, 27, "Subitem",ExpressionUUID->"373bccc3-8482-4908-bf33-d26a7509cf36"],
-Cell[117161, 2661, 469, 9, 25, "Subsubitem",ExpressionUUID->"da8d6504-960f-47de-9c31-f510572b732c"],
-Cell[117633, 2672, 361, 6, 25, "Subsubitem",ExpressionUUID->"a296a0ac-f8c5-4fde-902e-8b515cefbd00"]
+Cell[117406, 2653, 391, 6, 33, "Subitem",ExpressionUUID->"373bccc3-8482-4908-bf33-d26a7509cf36"],
+Cell[117800, 2661, 491, 8, 51, "Subsubitem",ExpressionUUID->"da8d6504-960f-47de-9c31-f510572b732c"],
+Cell[118294, 2671, 389, 6, 28, "Subsubitem",ExpressionUUID->"a296a0ac-f8c5-4fde-902e-8b515cefbd00"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[118043, 2684, 172, 3, 32, "Item",ExpressionUUID->"55f320bf-c220-495a-9975-000b5f547271"],
-Cell[118218, 2689, 356, 7, 45, "Subitem",ExpressionUUID->"b1d31006-44d3-44b9-97b4-0a7ac7df90b1"],
-Cell[118577, 2698, 416, 8, 45, "Subitem",ExpressionUUID->"23763074-e1b6-4aea-9cb0-53bb160219aa"],
-Cell[118996, 2708, 696, 12, 83, "Subitem",ExpressionUUID->"c6c6fe68-cc40-48f4-b641-a172ef16f3fc"]
+Cell[118732, 2683, 208, 4, 38, "Item",ExpressionUUID->"55f320bf-c220-495a-9975-000b5f547271"],
+Cell[118943, 2689, 417, 9, 56, "Subitem",ExpressionUUID->"b1d31006-44d3-44b9-97b4-0a7ac7df90b1"],
+Cell[119363, 2700, 474, 9, 56, "Subitem",ExpressionUUID->"23763074-e1b6-4aea-9cb0-53bb160219aa"],
+Cell[119840, 2711, 449, 9, 56, "Subitem",ExpressionUUID->"c6c6fe68-cc40-48f4-b641-a172ef16f3fc"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[119729, 2725, 151, 3, 32, "Item",ExpressionUUID->"e3e462c2-9ee3-4fac-a111-13f3f7bb1cb2"],
-Cell[119883, 2730, 450, 11, 52, "Input",ExpressionUUID->"02782038-f2df-4927-97f2-9579ca93d8c3"]
+Cell[120326, 2725, 223, 4, 38, "Item",ExpressionUUID->"98c06234-697f-46d3-a95b-4017b965b16b"],
+Cell[120552, 2731, 340, 5, 28, "Subitem",ExpressionUUID->"517c6121-f997-4a11-9e29-b62e8be83ac6"],
+Cell[120895, 2738, 342, 5, 28, "Subitem",ExpressionUUID->"7bedde16-1ff8-4171-a065-05a262eb10f7"],
+Cell[121240, 2745, 395, 6, 28, "Subitem",ExpressionUUID->"61d7e16f-f06f-4c79-b95b-285333c99f76"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[121672, 2756, 151, 3, 32, "Item",ExpressionUUID->"e3e462c2-9ee3-4fac-a111-13f3f7bb1cb2"],
+Cell[121826, 2761, 450, 11, 52, "Input",ExpressionUUID->"02782038-f2df-4927-97f2-9579ca93d8c3"]
 }, Open  ]]
 }
 ]
